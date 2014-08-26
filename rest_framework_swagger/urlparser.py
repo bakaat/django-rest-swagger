@@ -36,7 +36,7 @@ class UrlParser(object):
     def get_filtered_apis(self, apis, filter_path):
         filtered_list = []
 
-        match = "/{f}/".format(f=filter_path)
+        match = "/{f}".format(f=filter_path)
         for api in apis:
             if api['path'].startswith(match):
                 filtered_list.append(api)
