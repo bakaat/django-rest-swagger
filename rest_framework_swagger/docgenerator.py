@@ -301,7 +301,7 @@ class DocumentationGenerator(object):
                     field_serializer = "Write{}".format(field_serializer)
 
                 f['type'] = field_serializer
-                if field.many:
+                if field.many or field.type_label == 'array':
                     f['type'] = 'array'
                     if data_type in BaseMethodIntrospector.PRIMITIVES:
                         f['items'] = {'type': data_type}
